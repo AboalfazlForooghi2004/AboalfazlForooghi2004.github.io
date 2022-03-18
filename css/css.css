@@ -23,6 +23,7 @@ body{
 	
 	background-color:#9000BF; 
 	text-align: center;
+	margin-top: 10PX;
 	
 	
 }
@@ -35,7 +36,8 @@ height: 300px;
 	background-color:#9000BF;
 	width:20%;
 	height: 285px;
-	margin-right: 1px;
+	margin-right: 0.5px;
+	margin-top: -1%;
 	animation-name: example;
 	animation-duration: 10s
 	
@@ -47,12 +49,12 @@ height: 300px;
 
 .aside{
 	background-color:#000000;
-	border-left: 6px solid #9000BF;
-	width: 20%;
+	border-left: 5px   solid #9000BF;
+	width:18%;
 	height: 28px;
 	margin: auto;
-	margin-left: 200px;
-	margin-top: -120px;
+	margin-left: 150px;
+	margin-top: -1px;
 		
 }
 
@@ -217,5 +219,16 @@ height: 300px;
 	
 	
 }
+/*start trigger*/
+.el {
+  transition: max-height 0.3s;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.trigger:hover > .el {
+  max-height: var(--max-height);
+}
+/*end trigger*/
 
 
