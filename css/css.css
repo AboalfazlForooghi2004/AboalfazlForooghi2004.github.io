@@ -1,5 +1,5 @@
+
 body{
-	
 	direction: rtl;
 	 background-image: linear-gradient(to bottom right,#000000,#270046);
 	background-blend-mode:color;
@@ -36,33 +36,18 @@ height: 300px;
 	margin-top: -1%;
 	animation-name: example;
 	animation-duration: 10s
-	
-}
-@keyframes example{
-	from {background-color:#4B0082;}
-	to {background-color: #FF74FE;}
-}
-
-
-  display: flex;
-  justify-content: center;
-  font-family: monospace;
-}
-.centerty{
-	
-	align-content: center;
-	font-size: 50px
 }
 .typewriter-effect {
   display: flex;
   justify-content: center;
   font-family: monospace;
-	font-size: 24px;
+	font-size: 25px;
 	color: #B365EF;
 }
+
 .typewriter-effect > .text {
   max-width: 0;
-  animation: typing 6s steps(var(--characters)) infinite;
+  animation: typing 5s steps(var(--characters)) infinite;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -255,6 +240,13 @@ height: 300px;
 	margin-left:50%;
 	
 	
+}
+
+.footer{
+	color:#D2A6F5; 
+}
+*{
+	align-content: center;
 }
 
 
