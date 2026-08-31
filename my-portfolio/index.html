@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ابوالفضل فروغی — متخصص شبکه | Abolfazl Foroughi</title>
+  <meta name="description" content="پورتفولیو ابوالفضل فروغی — متخصص شبکه و زیرساخت" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&family=Caveat:wght@600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== ناوبری شناور کناری ===== -->
+  <aside class="side-nav" id="sideNav">
+    <a href="#top" class="side-link active" title="خانه"><i class="fa-solid fa-house"></i></a>
+    <a href="#projects" class="side-link" title="پروژه‌ها"><i class="fa-regular fa-folder-open"></i></a>
+    <a href="#about" class="side-link" title="درباره من"><i class="fa-regular fa-file-lines"></i></a>
+    <a href="#contact" class="side-link" title="تماس"><i class="fa-brands fa-telegram"></i></a>
+    <button class="side-fa" id="langBtn" title="Change Language">EN</button>
+  </aside>
+
+  <button class="to-top" id="toTop" aria-label="بازگشت به بالا"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <main id="top">
+
+    <!-- ===== Hero — چیدمان Bento ===== -->
+    <section class="bento container" id="hero">
+
+      <!-- کارت ۱: نام + عکس کوچک + دانلود -->
+      <div class="card col-left">
+        <div class="name-script"><span class="dot"></span><span class="caveat">Abolfazl Foroughi</span></div>
+        <div class="mini-photo"><img src="me.png" alt="ابوالفضل فروغی" onerror="this.remove()"></div>
+        <p class="muted small-text" data-i18n="hero_sub">علاقه‌مند به طراحی و پیاده‌سازی شبکه‌های پایدار، امن و مقیاس‌پذیر.</p>
+        <a href="#" class="btn light full" download data-i18n="dl_cv">دانلود رزومه</a>
+      </div>
+
+      <!-- کارت ۲: عکس بزرگ + دکمه‌ها -->
+      <div class="card col-center">
+        <div class="big-photo"><img src="me-big.png" alt="ابوالفضل فروغی" onerror="this.remove()"></div>
+        <div class="hero-overlay">
+          <h2 class="caveat" data-i18n="name_overlay">Abolfazl Foroughi</h2>
+          <div class="hero-btns">
+            <a href="#projects" class="btn green" data-i18n="projects">پروژه‌ها</a>
+            <a href="#about" class="btn dark" data-i18n="about">درباره من</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- کارت ۳: معرفی + شبکه‌ها + تماس -->
+      <div class="card col-right">
+        <h3 class="bio-title" data-i18n="bio_title">ابوالفضل فروغی — <span class="accent">متخصص شبکه و زیرساخت</span></h3>
+        <p class="muted small-text" data-i18n="bio_text">
+          متخصص شبکه با تجربه در طراحی، پیاده‌سازی و پشتیبانی شبکه‌های سازمانی؛ از مسیریابی و سوئیچینگ تا فایروال، VPN و مانیتورینگ زیرساخت.
+        </p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/abolfazl-foroughi-85119a22a" target="_blank" rel="noopener" class="social" aria-label="لینکدین"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/AboalfazlForooghi2004" target="_blank" rel="noopener" class="social" aria-label="گیت‌هاب"><i class="fa-brands fa-github"></i></a>
+          <a href="https://t.me/Abolfazl_forughi" target="_blank" rel="noopener" class="social" aria-label="تلگرام"><i class="fa-brands fa-telegram"></i></a>
+        </div>
+        <div class="wide-photo"><img src="me-desk.png" alt="ابوالفضل فروغی" onerror="this.remove()"></div>
+        <p class="muted small-text" data-i18n="contact_hint">در شبکه‌های اجتماعی پیام بدهید یا ایمیل بزنید.</p>
+        <a href="#contact" class="btn green full" data-i18n="contact_me">تماس با من</a>
+      </div>
+
+      <!-- کارت ۴: مهارت‌ها -->
+      <div class="card col-left skills-card">
+        <h3 class="card-title" data-i18n="skills">مهارت‌ها</h3>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===== پروژه‌ها ===== -->
+    <section class="section container" id="projects">
+      <h2 class="section-title" data-i18n="recent_projects">پروژه‌های اخیر</h2>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <!-- ===== تجربه و درباره من ===== -->
+    <section class="section container" id="about">
+      <h2 class="section-title" data-i18n="exp_about">تجربه و درباره من</h2>
+      <div id="experienceList"></div>
+    </section>
+
+    <!-- ===== تماس ===== -->
+    <section class="section container" id="contact">
+      <h2 class="section-title" data-i18n="contact_title">تماس با من</h2>
+          <div class="contact-list">
+
+        <div class="contact-card reveal">
+          <div class="contact-icon tg"><i class="fa-brands fa-telegram"></i></div>
+          <div class="contact-info">
+            <span class="contact-label" data-i18n="tg_label">تلگرام</span>
+            <strong dir="ltr">@Abolfazl_forughi</strong>
+            <p class="muted small-text" data-i18n="tg_text">سریع‌ترین راه ارتباطی با من.</p>
+          </div>
+          <div class="contact-actions">
+            <a href="https://t.me/Abolfazl_forughi" target="_blank" rel="noopener" class="btn green" data-i18n="tg_btn">ارسال پیام</a>
+            <button class="btn dark copy-btn" data-copy="@Abolfazl_forughi" data-i18n="copy">کپی</button>
+          </div>
+        </div>
+
+        <div class="contact-card reveal">
+          <div class="contact-icon phone"><i class="fa-solid fa-phone"></i></div>
+          <div class="contact-info">
+            <span class="contact-label" data-i18n="phone_label">تلفن</span>
+            <strong dir="ltr">09044376191</strong>
+            <p class="muted small-text" data-i18n="phone_text">برای تماس سریع، هر زمان.</p>
+          </div>
+          <div class="contact-actions">
+            <a href="tel:09044376191" class="btn green" data-i18n="call_btn">تماس</a>
+            <button class="btn dark copy-btn" data-copy="09044376191" data-i18n="copy">کپی</button>
+          </div>
+        </div>
+
+        <!-- TODO: ایمیل واقعی‌ات را جایگزین کن -->
+        <div class="contact-card reveal">
+          <div class="contact-icon mail"><i class="fa-solid fa-envelope"></i></div>
+          <div class="contact-info">
+            <span class="contact-label" data-i18n="email_label">ایمیل</span>
+            <strong dir="ltr" id="emailText">ab.forooghi2004@gmail.com</strong>
+            <p class="muted small-text" data-i18n="email_text">ایمیل بزنید، هر وقت که باشم جواب می‌دهم.</p>
+          </div>
+          <div class="contact-actions">
+            <a href="mailto:ab.forooghi2004@gmail.com" class="btn green" data-i18n="email_btn">ارسال ایمیل</a>
+            <button class="btn dark copy-btn" data-copy="ab.forooghi2004@gmail.com" data-i18n="copy">کپی</button>
+          </div>
+        </div>
+
+        <div class="contact-card reveal">
+          <div class="contact-icon in"><i class="fa-brands fa-linkedin-in"></i></div>
+          <div class="contact-info">
+            <span class="contact-label" data-i18n="li_label">لینکدین</span>
+            <strong dir="ltr">abolfazl-foroughi</strong>
+            <p class="muted small-text" data-i18n="li_text">پروفایل حرفه‌ای من در لینکدین.</p>
+          </div>
+          <div class="contact-actions">
+            <a href="https://www.linkedin.com/in/abolfazl-foroughi-85119a22a" target="_blank" rel="noopener" class="btn green" data-i18n="profile_btn">مشاهده پروفایل</a>
+          </div>
+        </div>
+
+        <div class="contact-card reveal">
+          <div class="contact-icon gh"><i class="fa-brands fa-github"></i></div>
+          <div class="contact-info">
+            <span class="contact-label" data-i18n="gh_label">گیت‌هاب</span>
+            <strong dir="ltr">AboalfazlForooghi2004</strong>
+            <p class="muted small-text" data-i18n="gh_text">پروژه‌ها و نمونه‌کارهای من.</p>
+          </div>
+          <div class="contact-actions">
+            <a href="https://github.com/AboalfazlForooghi2004" target="_blank" rel="noopener" class="btn green" data-i18n="gh_view_btn">مشاهده گیت‌هاب</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== فوتر ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="caveat footer-name">Abolfazl Foroughi</span>
+      <nav class="footer-nav">
+        <a href="#top" data-i18n="home">خانه</a>
+        <a href="#projects" data-i18n="projects">پروژه‌ها</a>
+        <a href="#about" data-i18n="about">درباره من</a>
+      </nav>
+      <div class="socials">
+        <a href="https://github.com/AboalfazlForooghi2004" target="_blank" rel="noopener" class="social small"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/abolfazl-foroughi-85119a22a" target="_blank" rel="noopener" class="social small"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="tel:09044376191" class="social small"><i class="fa-solid fa-phone"></i></a>
+      </div>
+    </div>
+    <p class="copyright" data-i18n="copyright">© تمامی حقوق محفوظ است — ابوالفضل فروغی</p>
+  </footer>
+
+  <div class="toast" id="toast">کپی شد ✓</div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
