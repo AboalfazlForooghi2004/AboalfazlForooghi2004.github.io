@@ -24,7 +24,6 @@ body {
 .accent { color: var(--green); }
 .caveat { font-family: "Caveat", cursive; font-size: 1.7rem; letter-spacing: 0.5px; }
 a { color: inherit; text-decoration: none; }
-/* اسم دست‌نویس سفید — مثل عکس نمونه (بدون هایلایت) */
 .name-script .caveat {
   display: inline; font-size: 2.2rem; font-weight: 600; line-height: 1.25;
   color: #fff; background: none; padding: 0; border-radius: 0;
@@ -90,7 +89,6 @@ a { color: inherit; text-decoration: none; }
   display: flex; flex-direction: column; gap: 14px; align-items: flex-start;
 }
 .hero-overlay .caveat { font-size: 2.4rem; line-height: 1.2; }
-/* Caveat حروف فارسی ندارد — در حالت فارسی فونت جایگزین */
 .hero-btns { display: flex; gap: 10px; }
 
 .name-script { display: flex; align-items: center; gap: 8px; }
@@ -206,6 +204,8 @@ a { color: inherit; text-decoration: none; }
 }
 .details { font-size: 0.85rem; color: var(--muted); margin-top: auto; transition: 0.25s; }
 .details:hover { color: var(--green); }
+.details-disabled { cursor: not-allowed; opacity: 0.65; }
+.details-disabled:hover { color: var(--muted); }
 .details i { margin-inline-end: 6px; font-size: 0.75rem; }
 
 /* ===== تجربه ===== */

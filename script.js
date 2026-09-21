@@ -1,26 +1,27 @@
-// ===== بَج تکنولوژی با آیکون و رنگ اختصاصی (مثل عکس نمونه) =====
+// ===== مشخصات تکنولوژی‌ها =====
 const TECH_META = {
-  Cisco:    { icon: "fa-solid fa-network-wired",      bg: "#1ba0d7" },
-  MikroTik: { icon: "fa-solid fa-router",             bg: "#29323c" },
-  VLAN:     { icon: "fa-solid fa-layer-group",        bg: "#8b5cf6" },
-  Routing:  { icon: "fa-solid fa-route",              bg: "#0ea5e9" },
-  Zabbix:   { icon: "fa-solid fa-chart-line",         bg: "#d40000" },
-  SNMP:     { icon: "fa-solid fa-satellite-dish",     bg: "#16a34a" },
-  Linux:    { icon: "fa-brands fa-linux",             bg: "#111111" },
-  Firewall: { icon: "fa-solid fa-shield-halved",      bg: "#ef4444" },
-  NAT:      { icon: "fa-solid fa-arrows-turn-to-dots",bg: "#f59e0b" },
-  IPsec:    { icon: "fa-solid fa-key",                bg: "#6366f1" },
-  L2TP:     { icon: "fa-solid fa-tunnel",             bg: "#0d9488" },
-  VPN:      { icon: "fa-solid fa-user-shield",        bg: "#7c3aed" },
-  DNS:      { icon: "fa-solid fa-book-atlas",         bg: "#2563eb" },
-  DHCP:     { icon: "fa-solid fa-addresses-card",     bg: "#059669" },
+  Cisco:    { icon: "fa-solid fa-network-wired",       bg: "#1ba0d7" },
+  MikroTik: { icon: "fa-solid fa-router",              bg: "#29323c" },
+  VLAN:     { icon: "fa-solid fa-layer-group",         bg: "#8b5cf6" },
+  Routing:  { icon: "fa-solid fa-route",               bg: "#0ea5e9" },
+  Zabbix:   { icon: "fa-solid fa-chart-line",          bg: "#d40000" },
+  SNMP:     { icon: "fa-solid fa-satellite-dish",      bg: "#16a34a" },
+  Linux:    { icon: "fa-brands fa-linux",              bg: "#111111" },
+  Firewall: { icon: "fa-solid fa-shield-halved",       bg: "#ef4444" },
+  NAT:      { icon: "fa-solid fa-arrows-turn-to-dots", bg: "#f59e0b" },
+  IPsec:    { icon: "fa-solid fa-key",                 bg: "#6366f1" },
+  L2TP:     { icon: "fa-solid fa-tunnel",              bg: "#0d9488" },
+  VPN:      { icon: "fa-solid fa-user-shield",         bg: "#7c3aed" },
+  DNS:      { icon: "fa-solid fa-book-atlas",          bg: "#2563eb" },
+  DHCP:     { icon: "fa-solid fa-address-card",        bg: "#059669" },
   "Wi-Fi":  { icon: "fa-solid fa-wifi",               bg: "#e11d48" },
-  AP:       { icon: "fa-solid fa-tower-broadcast",    bg: "#db2777" },
-  SSH:      { icon: "fa-solid fa-terminal",           bg: "#334155" },
+  AP:       { icon: "fa-solid fa-tower-broadcast",     bg: "#db2777" },
+  SSH:      { icon: "fa-solid fa-terminal",            bg: "#334155" },
   Security: { icon: "fa-solid fa-lock",               bg: "#dc2626" },
-  Python:   { icon: "fa-brands fa-python",            bg: "#3776ab" },
-  Netmiko:  { icon: "fa-solid fa-plug-circle-bolt",   bg: "#f97316" },
+  Python:   { icon: "fa-brands fa-python",             bg: "#3776ab" },
+  Netmiko:  { icon: "fa-solid fa-plug-circle-bolt",    bg: "#f97316" },
 };
+
 function techBadge(name) {
   const m = TECH_META[name] || { icon: "fa-solid fa-microchip", bg: "#22c55e" };
   return `<span class="tech"><span class="tech-ico" style="background:${m.bg}"><i class="${m.icon}"></i></span>${name}</span>`;
@@ -32,7 +33,7 @@ let lang = localStorage.getItem("lang") || "fa";
 const i18n = {
   fa: {
     hero_sub: "علاقه‌مند به طراحی و پیاده‌سازی شبکه‌های پایدار، امن و مقیاس‌پذیر با بهترین روش‌های مهندسی.",
-    dl_cv: "دانلود رزومه",
+    request_cv: "درخواست رزومه",
     projects: "پروژه‌ها",
     about: "درباره من",
     bio_title: "ابوالفضل فروغی — <span class='accent'>متخصص شبکه و زیرساخت</span>",
@@ -61,13 +62,14 @@ const i18n = {
     call_btn: "تماس",
     copy: "کپی",
     details: "مشاهده جزئیات",
+    details_soon: "جزئیات به‌زودی",
     copyright: "© تمامی حقوق محفوظ است — ابوالفضل فروغی",
     home: "خانه",
     toast: "کپی شد ✓",
   },
   en: {
     hero_sub: "Passionate about designing and building reliable, secure and scalable networks with the best engineering practices.",
-    dl_cv: "Download CV",
+    request_cv: "Request CV",
     projects: "Projects",
     about: "About Me",
     bio_title: "Abolfazl Foroughi — <span class='accent'>Network & Infrastructure Specialist</span>",
@@ -96,6 +98,7 @@ const i18n = {
     call_btn: "Call Now",
     copy: "Copy",
     details: "View Details",
+    details_soon: "Details coming soon",
     copyright: "© All Rights Reserved By Abolfazl Foroughi",
     home: "Home",
     toast: "Copied ✓",
@@ -103,6 +106,7 @@ const i18n = {
 };
 
 const t = () => i18n[lang];
+const hasRealUrl = (url) => Boolean(url && url !== "#");
 
 function applyLang() {
   document.documentElement.lang = lang;
@@ -116,7 +120,6 @@ function applyLang() {
 }
 
 function renderAll() {
-  // مهارت‌ها
   document.getElementById("skillsGrid").innerHTML = skills
     .map(
       (s) => `
@@ -127,27 +130,29 @@ function renderAll() {
     )
     .join("");
 
-  // پروژه‌ها
   document.getElementById("projectsGrid").innerHTML = projects
     .map(
-      (p) => `
+      (p) => {
+        const hasDemo = hasRealUrl(p.demoUrl);
+        const hasRepo = hasRealUrl(p.repoUrl);
+        return `
     <article class="project-card reveal">
       <div class="project-top">
-        <span class="badge green-b"><i class="fa-solid fa-lock-open"></i> ${p.tag}</span>
-        ${p.repoUrl && p.repoUrl !== "#" ? `<a class="repo" href="${p.repoUrl}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>` : ""}
+        <span class="badge green-b"><i class="fa-solid fa-network-wired"></i> ${p.tag}</span>
+        ${hasRepo ? `<a class="repo" href="${p.repoUrl}" target="_blank" rel="noopener" aria-label="GitHub repository"><i class="fa-brands fa-github"></i></a>` : ""}
       </div>
-      <div class="project-thumb">🌐</div>
+      <div class="project-thumb" aria-hidden="true">🌐</div>
       <h3>${p.title[lang]}</h3>
       <p class="muted small-text clamp">${p.description[lang]}</p>
       <div class="tech-row">${(p.tech || []).map((x) => techBadge(x)).join("")}</div>
-      <a class="details" href="${p.demoUrl || "#"}" target="_blank" rel="noopener">
-        <i class="fa-solid fa-arrow-up-right-from-square"></i> ${t().details}
-      </a>
-    </article>`
+      ${hasDemo
+        ? `<a class="details" href="${p.demoUrl}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> ${t().details}</a>`
+        : `<span class="details details-disabled"><i class="fa-solid fa-hourglass-half"></i> ${t().details_soon}</span>`}
+    </article>`;
+      }
     )
     .join("");
 
-  // تجربه‌ها
   document.getElementById("experienceList").innerHTML = experiences
     .map(
       (e) => `
@@ -162,7 +167,6 @@ function renderAll() {
     )
     .join("");
 
-  // عناصر جدید رندرشده را برای انیمیشن ظاهر شدن ثبت کن
   document.querySelectorAll(".reveal:not(.visible)").forEach((el) => revealObserver.observe(el));
 }
 
@@ -177,6 +181,7 @@ document.getElementById("langBtn").addEventListener("click", () => {
 const sideLinks = document.querySelectorAll(".side-link");
 const linkMap = {};
 sideLinks.forEach((a) => (linkMap[a.getAttribute("href").slice(1)] = a));
+linkMap.hero = linkMap.top;
 
 const navObserver = new IntersectionObserver(
   (entries) => {

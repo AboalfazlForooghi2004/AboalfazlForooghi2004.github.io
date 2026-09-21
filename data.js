@@ -16,14 +16,14 @@ const projects = [
     title: { fa: "مانیتورینگ و مدیریت شبکه با Zabbix", en: "Network Monitoring & Management with Zabbix" },
     description: {
       fa: "استقرار سیستم مانیتورینگ Zabbix برای پایش لحظه‌ای تجهیزات شبکه، هشداردهی هوشمند و گزارش‌گیری از وضعیت و پهنای باند لینک‌ها.",
-    	en: "Deployed Zabbix monitoring for real-time device health, smart alerting and bandwidth/link status reporting across the network.",
+      en: "Deployed Zabbix monitoring for real-time device health, smart alerting and bandwidth/link status reporting across the network.",
     },
     tech: ["Zabbix", "SNMP", "Linux"],
     demoUrl: "#", repoUrl: "#",
   },
   {
     tag: "Security",
-    title: { fa: "پیکربندی فایروال و امنیت پریزمتریک میکروتیک", en: "MikroTik Firewall & Perimeter Security" },
+    title: { fa: "پیکربندی فایروال و امنیت پیرامونی MikroTik", en: "MikroTik Firewall & Perimeter Security" },
     description: {
       fa: "پیاده‌سازی قواعد فایروال، NAT و فیلترینگ لایه‌ای روی روترهای میکروتیک برای محافظت از شبکه داخلی در برابر ترافیک مخرب.",
       en: "Implemented firewall rules, NAT and layer-based filtering on MikroTik routers to protect the internal network from malicious traffic.",
@@ -119,24 +119,24 @@ const experiences = [
 
 // ===== مهارت‌ها (آیکون + رنگ) =====
 const skills = [
-  { name: "Cisco",      icon: "fa-solid fa-network-wired",      color: "#1ba0d7" },
-  { name: "MikroTik",   icon: "fa-solid fa-router",             color: "#e63946" },
-  { name: "Routing",    icon: "fa-solid fa-route",              color: "#10b981" },
-  { name: "Switching",  icon: "fa-solid fa-ethernet",           color: "#f59e0b" },
-  { name: "VLAN",       icon: "fa-solid fa-layer-group",        color: "#8b5cf6" },
-  { name: "Firewall",   icon: "fa-solid fa-shield-halved",      color: "#ef4444" },
-  { name: "VPN",        icon: "fa-solid fa-user-shield",        color: "#06b6d4" },
-  { name: "Zabbix",     icon: "fa-solid fa-chart-line",         color: "#d40000" },
+  { name: "Cisco",      icon: "fa-solid fa-network-wired",         color: "#1ba0d7" },
+  { name: "MikroTik",   icon: "fa-solid fa-router",                color: "#e63946" },
+  { name: "Routing",    icon: "fa-solid fa-route",                 color: "#10b981" },
+  { name: "Switching",  icon: "fa-solid fa-ethernet",              color: "#f59e0b" },
+  { name: "VLAN",       icon: "fa-solid fa-layer-group",            color: "#8b5cf6" },
+  { name: "Firewall",   icon: "fa-solid fa-shield-halved",          color: "#ef4444" },
+  { name: "VPN",        icon: "fa-solid fa-user-shield",             color: "#06b6d4" },
+  { name: "Zabbix",     icon: "fa-solid fa-chart-line",              color: "#d40000" },
   { name: "Wireshark",  icon: "fa-solid fa-magnifying-glass-chart", color: "#3b82f6" },
-  { name: "Linux",      icon: "fa-brands fa-linux",             color: "#f5c518" },
-  { name: "Windows",    icon: "fa-brands fa-windows",           color: "#0078d4" },
-  { name: "Python",     icon: "fa-brands fa-python",            color: "#3776ab" },
-  { name: "DNS",        icon: "fa-solid fa-server",             color: "#14b8a6" },
-  { name: "DHCP",       icon: "fa-solid fa-address-book",       color: "#a855f7" },
-  { name: "TCP/IP",     icon: "fa-solid fa-globe",              color: "#22c55e" },
-  { name: "CCNA",       icon: "fa-solid fa-certificate",        color: "#0ea5e9" },
-  { name: "Security",   icon: "fa-solid fa-lock",               color: "#f43f5e" },
-  { name: "IT Support", icon: "fa-solid fa-headset",            color: "#94a3b8" },
+  { name: "Linux",      icon: "fa-brands fa-linux",                  color: "#f5c518" },
+  { name: "Windows",    icon: "fa-brands fa-windows",                color: "#0078d4" },
+  { name: "Python",     icon: "fa-brands fa-python",                 color: "#3776ab" },
+  { name: "DNS",        icon: "fa-solid fa-server",                  color: "#14b8a6" },
+  { name: "DHCP",       icon: "fa-solid fa-address-book",            color: "#a855f7" },
+  { name: "TCP/IP",     icon: "fa-solid fa-globe",                   color: "#22c55e" },
+  { name: "CCNA",       icon: "fa-solid fa-certificate",             color: "#0ea5e9" },
+  { name: "Security",   icon: "fa-solid fa-lock",                    color: "#f43f5e" },
+  { name: "IT Support", icon: "fa-solid fa-headset",                 color: "#94a3b8" },
 ];
 
 // ===== شبکه‌های اجتماعی =====

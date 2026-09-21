@@ -19,7 +19,7 @@
     <a href="#projects" class="side-link" title="پروژه‌ها"><i class="fa-regular fa-folder-open"></i></a>
     <a href="#about" class="side-link" title="درباره من"><i class="fa-regular fa-file-lines"></i></a>
     <a href="#contact" class="side-link" title="تماس"><i class="fa-brands fa-telegram"></i></a>
-    <button class="side-fa" id="langBtn" title="Change Language">EN</button>
+    <button class="side-fa" id="langBtn" title="Change Language" aria-label="تغییر زبان / Change language">EN</button>
   </aside>
 
   <button class="to-top" id="toTop" aria-label="بازگشت به بالا"><i class="fa-solid fa-arrow-up"></i></button>
@@ -29,12 +29,12 @@
     <!-- ===== Hero — چیدمان Bento ===== -->
     <section class="bento container" id="hero">
 
-      <!-- کارت ۱: نام + عکس کوچک + دانلود -->
+      <!-- کارت ۱: نام + عکس کوچک + رزومه -->
       <div class="card col-left">
         <div class="name-script"><span class="dot"></span><span class="caveat">Abolfazl Foroughi</span></div>
         <div class="mini-photo"><img src="me.png" alt="ابوالفضل فروغی" onerror="this.remove()"></div>
         <p class="muted small-text" data-i18n="hero_sub">علاقه‌مند به طراحی و پیاده‌سازی شبکه‌های پایدار، امن و مقیاس‌پذیر.</p>
-        <a href="#" class="btn light full" download data-i18n="dl_cv">دانلود رزومه</a>
+        <a href="#contact" class="btn light full" data-i18n="request_cv">درخواست رزومه</a>
       </div>
 
       <!-- کارت ۲: عکس بزرگ + دکمه‌ها -->
@@ -60,7 +60,7 @@
           <a href="https://github.com/AboalfazlForooghi2004" target="_blank" rel="noopener" class="social" aria-label="گیت‌هاب"><i class="fa-brands fa-github"></i></a>
           <a href="https://t.me/Abolfazl_forughi" target="_blank" rel="noopener" class="social" aria-label="تلگرام"><i class="fa-brands fa-telegram"></i></a>
         </div>
-        <div class="wide-photo"><img src="me-desk.png" alt="ابوالفضل فروغی" onerror="this.remove()"></div>
+        <div class="wide-photo"><img src="me-desk.png" alt="ابوالفضل فروغی" loading="lazy" onerror="this.remove()"></div>
         <p class="muted small-text" data-i18n="contact_hint">در شبکه‌های اجتماعی پیام بدهید یا ایمیل بزنید.</p>
         <a href="#contact" class="btn green full" data-i18n="contact_me">تماس با من</a>
       </div>
@@ -87,7 +87,7 @@
     <!-- ===== تماس ===== -->
     <section class="section container" id="contact">
       <h2 class="section-title" data-i18n="contact_title">تماس با من</h2>
-          <div class="contact-list">
+      <div class="contact-list">
 
         <div class="contact-card reveal">
           <div class="contact-icon tg"><i class="fa-brands fa-telegram"></i></div>
@@ -115,7 +115,6 @@
           </div>
         </div>
 
-        <!-- TODO: ایمیل واقعی‌ات را جایگزین کن -->
         <div class="contact-card reveal">
           <div class="contact-icon mail"><i class="fa-solid fa-envelope"></i></div>
           <div class="contact-info">
@@ -169,9 +168,9 @@
         </nav>
       </div>
       <div class="socials">
-        <a href="https://github.com/AboalfazlForooghi2004" target="_blank" rel="noopener" class="social small"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/abolfazl-foroughi-85119a22a" target="_blank" rel="noopener" class="social small"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="tel:09044376191" class="social small"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://github.com/AboalfazlForooghi2004" target="_blank" rel="noopener" class="social small" aria-label="گیت‌هاب"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/abolfazl-foroughi-85119a22a" target="_blank" rel="noopener" class="social small" aria-label="لینکدین"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="tel:09044376191" class="social small" aria-label="تماس تلفنی"><i class="fa-solid fa-phone"></i></a>
       </div>
     </div>
     <p class="copyright" data-i18n="copyright">© تمامی حقوق محفوظ است — ابوالفضل فروغی</p>
@@ -183,4 +182,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
