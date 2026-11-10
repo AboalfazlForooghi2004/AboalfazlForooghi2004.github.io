@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -17,7 +18,9 @@ concurrency:
 
 jobs:
   # ----------------------------------------------------------------
-  # Build job — runs on every push and PR, uploads artifact
+  # Build job — runs on push, PR, and manual dispatch.
+  # configure-pages and upload-artifact are skipped on PRs so that
+  # PR checks never require Pages deployment permissions.
   # ----------------------------------------------------------------
   build:
     runs-on: ubuntu-latest
@@ -32,7 +35,8 @@ jobs:
           bundler-cache: true
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
 
       - name: Build with Jekyll
         run: bundle exec jekyll build
@@ -40,34 +44,14 @@ jobs:
           JEKYLL_ENV: production
 
       - name: Upload artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
 
   # ----------------------------------------------------------------
-  # Pull request job — builds but never deploys
-  # ----------------------------------------------------------------
-  pull_request:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: "3.2"
-          bundler-cache: true
-
-      - name: Build with Jekyll
-        run: bundle exec jekyll build
-        env:
-          JEKYLL_ENV: production
-
-  # ----------------------------------------------------------------
-  # Deploy job — only from the default branch on push
+  # Deploy job — only on push to main, never on PRs
   # ----------------------------------------------------------------
   deploy:
-    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && github.event_name == 'push'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:
