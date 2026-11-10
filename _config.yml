@@ -1,0 +1,73 @@
+# =============================================================
+# Site Settings
+# =============================================================
+title: "Abolfazl Foroughi — Network Engineer"
+description: "Network Engineer specializing in Linux Networking, SDN, Network Virtualization, and Network Automation."
+url: "https://aboalfazlforooghi2004.github.io"
+baseurl: ""
+author: "Abolfazl Foroughi"
+lang: "en"
+
+# =============================================================
+# Build Settings
+# =============================================================
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+timezone: Asia/Tehran
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# =============================================================
+# Plugins
+# =============================================================
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# =============================================================
+# Exclude from build
+# Items not needed in the Jekyll build output.
+# =============================================================
+exclude:
+  - .kiro/
+  - _migration-notes.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - README.md
+  - .gitignore
+  - "*.sh"
+  - mise.toml
+  - .tool-versions
+
+# =============================================================
+# Collections
+# =============================================================
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# =============================================================
+# Defaults
+# =============================================================
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Abolfazl Foroughi"
+      toc: true
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"

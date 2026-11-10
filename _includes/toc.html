@@ -1,0 +1,35 @@
+{% comment %}
+  toc.html — Table of contents generator.
+  Extracts h2 and h3 headings from page content and renders
+  a navigation list with anchor links. Omitted if fewer than 3 headings.
+  Usage: {% include toc.html html=content %}
+{% endcomment %}
+
+{% assign headings = include.html | split: '<h' %}
+{% assign heading_count = 0 %}
+{% for h in headings %}
+  {% if h contains 'h2' or h contains 'h3' %}
+    {% assign heading_count = heading_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+{% if heading_count >= 3 %}
+<nav class="toc" aria-label="Table of contents">
+  <h2 class="toc__title">Contents</h2>
+  <ol class="toc__list">
+    {% for h in headings %}
+      {% if h contains 'h2' or h contains 'h3' %}
+        {% assign level = 'h2' %}
+        {% if h contains 'h3' %}{% assign level = 'h3' %}{% endif %}
+        {% assign id_match = h | split: 'id="' | last | split: '"' | first %}
+        {% assign text_match = h | split: '>' | last | split: '<' | first %}
+        {% if level == 'h2' %}
+    <li class="toc__item toc__item--h2"><a href="#{{ id_match }}" class="toc__link">{{ text_match }}</a></li>
+        {% else %}
+    <li class="toc__item toc__item--h3"><a href="#{{ id_match }}" class="toc__link">{{ text_match }}</a></li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ol>
+</nav>
+{% endif %}

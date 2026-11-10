@@ -1,0 +1,18 @@
+<header class="header">
+  <nav class="nav" id="mainNav" aria-label="Main navigation">
+    <a href="/" class="nav__logo">Abolfazl Foroughi</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav__menu" id="navMenu">
+      <li><a href="/" class="nav__link{% if page.url == '/' %} nav__link--active{% endif %}">Home</a></li>
+      <li><a href="/projects/" class="nav__link{% if page.url contains '/projects/' %} nav__link--active{% endif %}">Projects</a></li>
+      <li><a href="/blog/" class="nav__link{% if page.url contains '/blog/' %} nav__link--active{% endif %}">Blog</a></li>
+      <li><a href="/open-source/" class="nav__link{% if page.url contains '/open-source/' %} nav__link--active{% endif %}">Open Source</a></li>
+      <li><a href="/about/" class="nav__link{% if page.url contains '/about/' %} nav__link--active{% endif %}">About</a></li>
+      <li><a href="/#contact" class="nav__link">Contact</a></li>
+    </ul>
+  </nav>
+</header>

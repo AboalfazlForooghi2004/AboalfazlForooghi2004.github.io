@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<div class="container" style="padding-top: var(--space-12);">
+  <h1 class="section__heading">Blog</h1>
+  <p class="section__subtitle">Technical articles on Linux networking, SDN, network virtualization, routing, and automation.</p>
+
+  {% if site.posts.size > 0 %}
+
+  <!-- Featured articles -->
+  {% assign featured_posts = site.posts | where: "featured", true %}
+  {% if featured_posts.size > 0 %}
+  <h2 class="case-study__section-title">Featured</h2>
+  <div class="articles-grid" style="margin-bottom: var(--space-8);">
+    {% for post in featured_posts limit: 2 %}
+    {% include article-card.html %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- All articles -->
+  <h2 class="case-study__section-title">All Articles</h2>
+  <div class="articles-grid">
+    {% for post in site.posts %}
+    {% include article-card.html %}
+    {% endfor %}
+  </div>
+
+  {% else %}
+
+  <!-- Empty state -->
+  <div class="card article-empty-state">
+    <h3 style="font-size: var(--text-xl); font-weight: var(--font-semibold); margin-bottom: var(--space-3);">Technical articles coming soon</h3>
+    <p class="card__text">
+      I'm currently writing about Linux VRF, BGP on Linux with FRRouting, network
+      virtualization architecture, and building a network monitoring dashboard.
+      Articles will be published here as they are completed.
+    </p>
+    <p class="text-muted" style="margin-top: var(--space-3); margin-bottom: var(--space-2);">Topics in progress:</p>
+    <ul class="article-topics">
+      <li>Understanding Linux VRF for Multi-Tenant Network Isolation</li>
+      <li>BGP Established Does Not Mean Traffic Is Forwarding</li>
+      <li>Network Namespaces Explained</li>
+      <li>Getting Started with Ansible for Network Engineers</li>
+      <li>Policy-Based Routing on Linux</li>
+      <li>Building a Network Monitoring Dashboard</li>
+      <li>My First Contribution to FRRouting</li>
+    </ul>
+  </div>
+
+  {% endif %}
+</div>

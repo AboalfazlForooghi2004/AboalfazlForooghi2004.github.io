@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<article class="post" style="padding-top: var(--space-12);">
+  <div class="container container--article">
+
+    <!-- Article header -->
+    <header class="post__header">
+      <div class="post__meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+        {% if page.reading_time %}<span>·</span><span>{{ page.reading_time }} min read</span>{% endif %}
+        {% if page.category %}<span>·</span><span class="badge badge--featured">{{ page.category }}</span>{% endif %}
+      </div>
+      <h1 class="post__title">{{ page.title }}</h1>
+      {% if page.tags %}
+      <div class="post__tags">
+        {% for tag in page.tags %}
+        <a href="/blog/tags/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
+
+    <!-- Article content with TOC sidebar -->
+    <div class="post__layout">
+      {% assign toc_content = content %}
+      {% include toc.html html=content %}
+
+      <div class="post__content">
+        {{ content }}
+      </div>
+    </div>
+
+    <!-- Related articles -->
+    {% assign related = site.posts | where: "category", page.category | where_exp: "post", "post.url != page.url" | limit: 3 %}
+    {% if related.size > 0 %}
+    <footer class="post__footer">
+      <h2 class="case-study__section-title">Related Articles</h2>
+      <div class="articles-grid">
+        {% for post in related %}
+        {% include article-card.html %}
+        {% endfor %}
+      </div>
+    </footer>
+    {% else %}
+    <footer class="post__footer">
+      <a href="/blog/" class="btn btn--ghost">← Back to Blog</a>
+    </footer>
+    {% endif %}
+
+  </div>
+</article>

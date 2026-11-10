@@ -1,0 +1,115 @@
+# =============================================================
+# Project Data — Portfolio Redesign
+#
+# CRITICAL CONSTRAINTS:
+#   - The prohibited internal name must NEVER appear in this file
+#   - SDN project public title is always "SDN & Network Virtualization Platform"
+#   - Personal phone number must not appear anywhere here
+#   - Do not add placeholder "#" URLs — omit repo_url/demo_url if not real
+#   - Status values: "Implemented" | "In Progress" | "Experimental" | "Planned"
+# =============================================================
+
+featured:
+  - id: sdn-platform
+    title: "SDN & Network Virtualization Platform"
+    description: "A Linux-based network virtualization project focused on multi-tenant isolation, virtual routing, shared network services, and policy-based traffic forwarding."
+    status: "Active Development"
+    featured: true
+    case_study_url: "/projects/sdn-platform/"
+    repo_url:
+    technologies:
+      - name: "Open vSwitch"
+        color: "#0ea5e9"
+      - name: "Linux VRF"
+        color: "#8b5cf6"
+      - name: "Network Namespaces"
+        color: "#10b981"
+      - name: "VLAN"
+        color: "#f59e0b"
+      - name: "nftables"
+        color: "#ef4444"
+      - name: "Policy-Based Routing"
+        color: "#e67e22"
+      - name: "Conntrack"
+        color: "#06b6d4"
+    capabilities:
+      implemented:
+        - "Multi-tenant network isolation using Linux VRF and network namespaces"
+        - "VLAN-based traffic segmentation per tenant"
+        - "Open vSwitch bridge configuration with per-tenant port assignment"
+        - "nftables policy rules for inter-tenant traffic control"
+        - "Policy-Based Routing with custom routing tables per VRF"
+        - "Conntrack marks for stateful per-VRF packet classification"
+      planned:
+        - "Centralized management API for dynamic tenant provisioning"
+        - "Automated topology validation and testing framework"
+        - "Integration with higher-level orchestration tooling"
+    scope_note: "This is a Linux-based learning and experimentation project — not a fully featured centralized SDN controller and not a replacement for production platforms such as Calico or Open vSwitch with full SDN controller integration."
+
+  - id: netwatch
+    title: "NetWatch – Network Monitoring Dashboard"
+    description: "A web-based monitoring dashboard for network visibility, integrating FortiGate firewall logs, NetFlow traffic analysis, and FreeRADIUS authentication events into a unified interface."
+    status: "Work in Progress"
+    featured: true
+    case_study_url: "/projects/netwatch/"
+    repo_url: "https://github.com/AboalfazlForooghi2004/NetWatch"
+    technologies:
+      - name: "Flask"
+        color: "#1a1a1a"
+      - name: "Python"
+        color: "#3776ab"
+      - name: "JavaScript"
+        color: "#f7df1e"
+      - name: "FortiGate"
+        color: "#ee2928"
+      - name: "NetFlow"
+        color: "#0ea5e9"
+      - name: "OpenSearch"
+        color: "#005eb8"
+      - name: "FreeRADIUS"
+        color: "#8b5cf6"
+      - name: "SQLite"
+        color: "#003b57"
+    capabilities:
+      implemented:
+        - "Flask backend with REST API endpoints for dashboard data"
+        - "Vanilla JavaScript frontend with live data polling"
+        - "FortiGate syslog ingestion and parsing"
+        - "SQLite storage for authentication events"
+        - "Basic dashboard layout with traffic summary panels"
+      in_progress:
+        - "NetFlow collector integration and traffic visualization"
+        - "OpenSearch indexing for historical log search"
+        - "FreeRADIUS RADIUS accounting event correlation"
+        - "Alert rules and notification system"
+
+labs:
+  - id: linux-labs
+    title: "Linux Networking Labs"
+    description: "Practical hands-on experiments with Linux routing, BGP, FRRouting, VRF, network namespaces, nftables, and policy routing. These are learning activities and documented experiments — not production deployments."
+    status: "Ongoing"
+    featured: false
+    case_study_url: "/projects/linux-labs/"
+    repo_url:
+    technologies:
+      - name: "Linux"
+        color: "#f5c518"
+      - name: "FRRouting"
+        color: "#f59e0b"
+      - name: "BGP"
+        color: "#0ea5e9"
+      - name: "VRF"
+        color: "#8b5cf6"
+      - name: "Network Namespaces"
+        color: "#10b981"
+      - name: "nftables"
+        color: "#ef4444"
+      - name: "Policy Routing"
+        color: "#e67e22"
+    experiments:
+      - "BGP peering between Linux hosts using FRRouting"
+      - "Multi-path routing with custom routing tables"
+      - "Network namespace isolation and inter-namespace routing"
+      - "nftables rule chains for stateful packet filtering"
+      - "VRF-based routing table separation on a single Linux host"
+      - "Policy-Based Routing with ip rule and ip route"
