@@ -1,0 +1,22 @@
+{% comment %}
+  article-card.html — Reusable blog article preview card.
+  Variable: post (a Jekyll post object)
+{% endcomment %}
+
+<a href="{{ post.url }}" class="card card--interactive article-card">
+  <div class="article-card__meta">
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+    {% if post.reading_time %}<span>{{ post.reading_time }} min read</span>{% endif %}
+    {% if post.category %}<span class="badge badge--featured">{{ post.category }}</span>{% endif %}
+  </div>
+  <h3 class="article-card__title">{{ post.title }}</h3>
+  <p class="article-card__excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+  {% if post.tags %}
+  <div class="article-card__tags">
+    {% for tag in post.tags %}
+    <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <span class="article-card__link">Read Article →</span>
+</a>

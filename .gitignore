@@ -1,0 +1,32 @@
+# Jekyll build output
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Sass cache (not used but prevent if ever generated)
+.sass-cache/
+
+# Bundler
+.bundle/
+vendor/
+
+# Kiro specs and steering (contains internal/private project context — must never be public)
+.kiro/
+
+# Legacy and migration notes (already removed, keep ignored as safety)
+_legacy/
+_migration-notes.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+
+# Tool version manager files (auto-generated, not part of the site)
+mise.toml
+.tool-versions
